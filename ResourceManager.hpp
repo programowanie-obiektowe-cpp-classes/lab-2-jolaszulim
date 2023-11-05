@@ -18,6 +18,12 @@ class ResourceManager
         return *this;
     }
 
+ResourceManager& operator=(ResourceManager&& x3) noexcept {
+    if (this != &x3) {
+        r = std::move(x3.r);
+    }
+    return *this;
+}
 
     ~ResourceManager() {}
 
