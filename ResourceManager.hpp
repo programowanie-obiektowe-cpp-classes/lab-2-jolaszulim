@@ -2,7 +2,7 @@
 
 #include "Resource.hpp"
 
-class ResourceManager
+class ResourceManager : Resource
 {
     public:
     ResourceManager() : r() {}
