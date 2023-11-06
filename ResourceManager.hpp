@@ -2,10 +2,10 @@
 
 #include "Resource.hpp"
 
-class ResourceManager : Resource
+class ResourceManager
 {
   public:
-    ResourceManager() : r() {}
+    ResourceManager() : resource() {}
 
     ResourceManager(const ResourceManager&) = default;
     ResourceManager& operator=(const ResourceManager&) = default;
@@ -13,9 +13,9 @@ class ResourceManager : Resource
     ResourceManager& operator=(ResourceManager&&) = default;
     ~ResourceManager() = default;
 
-    double get() { return r.get();}
+    double get() { return resource.get();}
 
 private:
-    Resource r;
+    Resource resource;
 
 };
