@@ -4,29 +4,18 @@
 
 class ResourceManager : Resource
 {
-    public:
+  public:
     ResourceManager() : r() {}
 
-    ResourceManager(const ResourceManager& x) : r(x.r) {}
+    ResourceManager(const ResourceManager&) = default;
+    ResourceManager& operator=(const ResourceManager&) = default;
+    ResourceManager(ResourceManager&&) = default;
+    ResourceManager& operator=(ResourceManager&&) = default;
+    ~ResourceManager() = default;
 
     double get() { return r.get();}
 
-    ResourceManager& operator=(const ResourceManager &x1) {
-        if (this != &x1) {
-            r = x1.r;
-        }
-        return *this;
-    }
-
-ResourceManager& operator=(ResourceManager&& x3) noexcept {
-    if (this != &x3) {
-        r = std::move(x3.r);
-    }
-    return *this;
-}
-
-    ~ResourceManager() {}
-
 private:
     Resource r;
+
 };
