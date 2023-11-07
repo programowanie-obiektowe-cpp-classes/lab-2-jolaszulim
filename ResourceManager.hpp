@@ -16,14 +16,14 @@ public:
         r = x.r;
         x.r = nullptr;
     }
-    ResourceManager& operator=(ResourceManager&& x3) noexcept {
+    ResourceManager& operator=(ResourceManager&& x) noexcept {
         delete r;
         r = x.r;
         x.r = nullptr;
         return *this;
     }
    double get() { return r->get();}
-   ~ResourceManager() { delete r; }
+   ~ResourceManager() { delete r;}
 
 private:
     Resource* r;
